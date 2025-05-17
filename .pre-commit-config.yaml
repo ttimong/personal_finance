@@ -1,0 +1,41 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-added-large-files
+        name: Check for large files
+        args: ["--maxkb=3000"]
+      - id: check-merge-conflict
+      - id: trailing-whitespace
+        name: Check for trailing trailing whitespace
+        args: ["--markdown-linebreak-ext=md"]
+      - id: check-yaml
+        name: Check YAML files
+      - id: end-of-file-fixer
+        name: Add newline at the end-of-file if required
+  - repo: https://github.com/pycqa/isort
+    rev: 5.13.2
+    hooks:
+      - id: isort
+        name: Sort imports
+  - repo: https://github.com/psf/black
+    rev: 24.10.0
+    hooks:
+      - id: black
+        name: Code formatting (black)
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.18.0
+    hooks:
+      - id: pyupgrade
+        name: Upgrade syntax
+        args: [--py310-plus]
+  - repo: https://github.com/hadialqattan/pycln
+    rev: v2.5.0
+    hooks:
+      - id: pycln
+        name: Clean up imports
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.5.5
+    hooks:
+      - id: ruff
+        types: [python]
