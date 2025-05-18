@@ -1,16 +1,13 @@
 import json
-import sys
 
-print("Python module search path:", sys.path)  # noqa: E402
+from flask import Flask, jsonify, request
+from flask_cors import CORS
 
-from flask import Flask, jsonify, request  # noqa: E402
-from flask_cors import CORS  # noqa: E402
-
-from expense_reconcillation.constants import (  # noqa: E402
+from expense_reconcillation.constants import (
     ManualColNamesMap,
     StmtColNamesMap,
 )
-from expense_reconcillation.helper import load_data, match_data  # noqa: E402
+from expense_reconcillation.helper import load_data, match_data
 
 app = Flask(__name__)
 CORS(app)
