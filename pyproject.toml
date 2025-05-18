@@ -1,0 +1,6 @@
+[tools.isort]
+profile = "black"
+line_length = 88
+
+[tools.black]
+line-length = 88
